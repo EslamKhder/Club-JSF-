@@ -1,0 +1,65 @@
+body
+{
+    padding: 0px;
+    margin: 0px;
+    background-image: url(../../view/img/back.jpg);
+    background-size: cover;
+}
+h1
+{
+    font-family: fantasy;
+    font-size: 45px;
+    text-align: center;
+    background-color: brown;
+    color: burlywood;
+    border-radius: 100px;
+    border: 8px double white;
+    margin-top: 31px ;
+}
+button
+{
+    display: block;
+    background-color: #EEE;
+    width: 581px;
+    height: 69px;
+    margin: 10px;
+    transition: all 1s ease-in-out;
+    border-radius: 50px;
+    font-style: italic;
+    font-weight: bold;
+    border: 3px solid blue;
+}
+.bu
+{ 
+    padding: 30px ;
+    background-color: firebrick;
+    width: 602px;
+    margin: 197px auto;
+    border-radius: 70px;
+    border: 5px solid gray
+
+}
+a
+{
+    font-family: sans-serif;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.ph
+{
+    background-image: url("p3.jpg");
+    background-size: cover;
+    margin-top: -30px;
+}
+button:hover
+{
+    border-radius: 100px;
+    background-color: skyblue;
+    color: darkmagenta;
+    border: 5px solid green ;
+    box-shadow: 10px 10px 10px #eee ,
+        -10px -10px 10px #eee;
+}

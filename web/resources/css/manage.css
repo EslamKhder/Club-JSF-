@@ -1,0 +1,76 @@
+body
+{
+    padding: 0px;
+    margin: 0px;
+    background-image: url(../../view/img/i.jpg);
+    background-size: cover;
+}
+table
+{
+    border: 5px solid gray;
+    width: 1000px;
+    background-color: #ccc;
+    margin: 90px auto;
+}
+th
+{
+    font-size: 40px;
+    font-family: fantasy;
+    text-align: center;
+    color:blue;
+border: 5px solid gray;
+}
+td
+{
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+    color:brown;
+    border: 5px solid gray;
+}
+
+div .B
+{
+    background-color: #ccc;
+    margin: 50px auto;
+    border:5px double blue;
+    border-radius: 50px;
+    width: 900px;
+}
+button
+{
+    background-color: #EEE;
+    margin: 30px;
+    transition: all 1s ease-in-out;
+    border-radius: 50px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 40px;
+    border: 3px solid blue;
+    width: 227px;
+    height: 68px;
+
+}
+a
+{
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: none;
+    color: brown;
+}
+button:hover
+{
+    border-radius: 100px;
+    background-color: skyblue;
+    color: darkmagenta;
+    border: 5px solid green ;
+    box-shadow: 10px 10px 10px #eee ,
+        -10px -10px 10px #eee;
+}
+.back
+{
+    background-image: url(i.jpg);
+    background-size: cover;
+    margin: -50px;
+    padding: 100px;
+}

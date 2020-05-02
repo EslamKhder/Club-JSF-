@@ -1,0 +1,117 @@
+body
+{
+    background-color: firebrick;
+}
+div
+{
+    background-color:red;
+    font-family: fantasy;
+    font-size: 45px;
+    margin: 30px auto;
+    width:90%;
+    height: 200px;
+    background-color: brown;
+    color: burlywood;
+    border-radius: 50px;
+    border: 8px double burlywood;
+    text-align: center;
+    padding-top: 150px;
+    margin-top: 130px 
+
+}
+span
+{
+    color: chartreuse;
+    word-spacing: 10px;
+    text-transform: uppercase;
+}
+form
+{
+    background-color: #ccc;
+    border: 4px double blue;
+}
+fieldset
+{
+    background-color: silver;
+    border: 4px double blue;
+    margin: 20px;
+}
+input
+{
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: 600;
+    border: 1px solid blue;
+    margin-bottom:10px;
+    margin: 10px auto;
+
+}
+legend
+{
+    color:wheat;
+    background-color:brown;
+    padding:10px;
+    margin:10px;
+    border: 1px dotted #51433E;
+    border-radius: 20px  ;
+    text-align: center;
+    width: 300px;
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: 600;
+}
+label
+{
+    color:black;
+    height:10px;
+    padding:10px;
+    width:250px;
+    font-weight: bolder;
+    font-size: 30px;
+}
+input[type="submit"]
+{
+    border-radius: 50px;
+    width: 350px;
+    margin-left: 150px;
+}
+button
+{
+    border-radius: 50px;
+    width: 370px;
+    height: 70px;
+    margin-left: 150px;
+    background-color: firebrick;
+    color:black;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border:5px solid red;
+    cursor: pointer;
+}
+hr
+{
+    background-color: black;
+    height: 5px;
+}
+textarea
+{
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: 600;
+    border: 1px solid blue;
+    margin-top: 20px;
+    background-color: cadetblue;
+    color: navajowhite;
+    resize: none;
+    border: 5px solid brown;
+    border-radius: 50px;
+    margin-left: 100px;
+
+}

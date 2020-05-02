@@ -1,0 +1,27 @@
+body
+{
+    background-color: firebrick;
+}
+div
+{
+    background-color:red;
+    font-family: fantasy;
+    font-size: 45px;
+    margin: 30px auto;
+    width:90%;
+    height: 200px;
+    background-color: brown;
+    color: burlywood;
+    border-radius: 50px;
+    border: 8px double burlywood;
+    text-align: center;
+    padding-top: 150px;
+    margin-top: 130px 
+
+}
+span
+{
+    color: chartreuse;
+    word-spacing: 10px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>AddPlayer</title>
+        <h:outputStylesheet library="css" name="Add.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <fieldset>
+                <legend>Insert</legend>
+                <label>Frist Name : </label> 
+                <h:inputText value="#{control.player.fname}" required="true" requiredMessage="Username is required" /><br/>
+
+                <label>Last Name : </label>
+                <h:inputText value="#{control.player.lname}" required="true" requiredMessage="Username is required" /><br/>
+
+                <label>YOUR Age : </label>
+                <h:inputText value="#{control.player.age}" required="true" requiredMessage="Username is required" /><br/>
+
+                <label>YOUR Phone : </label>
+                <h:inputText value="#{control.player.phone}" required="true" requiredMessage="Username is required" /><br/>
+
+                <label> Country : </label>
+                <h:inputText value="#{control.player.country}" required="true" requiredMessage="Username is required" /><br/>
+                <label>Gender : </label>
+                <h:selectOneRadio value="#{control.player.gender}" > 
+                    <f:selectItem itemValue = "Male" itemLabel = "Male" class="red"/> 
+                    <f:selectItem itemValue = "FeMale" itemLabel = "FeMale" class="red"/>
+                </h:selectOneRadio>  
+                <label>Your Sport : </label>
+                <h:selectOneRadio value="#{control.player.sport}"> 
+                    <f:selectItem itemValue = "Football" itemLabel = "Football" /> 
+                    <f:selectItem itemValue = "Tennis" itemLabel = "Tennis" /> 
+                    <f:selectItem itemValue = "Swimming" itemLabel = "Swimming" /> 
+                    <f:selectItem itemValue = "Basketball" itemLabel = "Basketball" /> 
+                    <f:selectItem itemValue = "VolleyBall" itemLabel = "VolleyBall" />
+                 </h:selectOneRadio>
+                <h:commandButton id="submit-button" value="Submit" action="#{control.addPlayer()}"/>  
+            </fieldset>
+        </h:form>
+    </h:body>
+</html>
+
