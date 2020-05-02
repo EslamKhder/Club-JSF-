@@ -11,27 +11,30 @@
         <h:form>
             <fieldset>
                 <legend>Insert</legend>
+                <label>ID : </label> 
+                <h:inputText value="#{control.player.id}" required="true" requiredMessage="ID is required" /><br/>
+                
                 <label>Frist Name : </label> 
-                <h:inputText value="#{control.player.fname}" required="true" requiredMessage="Username is required" /><br/>
+                <h:inputText value="#{control.player.fname}" required="true" requiredMessage="Name is required" /><br/>
 
                 <label>Last Name : </label>
-                <h:inputText value="#{control.player.lname}" required="true" requiredMessage="Username is required" /><br/>
+                <h:inputText value="#{control.player.lname}" required="true" requiredMessage="Name is required" /><br/>
 
                 <label>YOUR Age : </label>
-                <h:inputText value="#{control.player.age}" required="true" requiredMessage="Username is required" /><br/>
+                <h:inputText value="#{control.player.age}" required="true" requiredMessage="Age is required" /><br/>
 
                 <label>YOUR Phone : </label>
-                <h:inputText value="#{control.player.phone}" required="true" requiredMessage="Username is required" /><br/>
+                <h:inputText value="#{control.player.phone}" required="true" requiredMessage="Phone is required" /><br/>
 
                 <label> Country : </label>
-                <h:inputText value="#{control.player.country}" required="true" requiredMessage="Username is required" /><br/>
+                <h:inputText value="#{control.player.country}" required="true" requiredMessage="Country is required" /><br/>
                 <label>Gender : </label>
-                <h:selectOneRadio value="#{control.player.gender}" > 
+                <h:selectOneRadio value="#{control.player.gender}" required="true" requiredMessage="Your Gender is required"> 
                     <f:selectItem itemValue = "Male" itemLabel = "Male" class="red"/> 
                     <f:selectItem itemValue = "FeMale" itemLabel = "FeMale" class="red"/>
-                </h:selectOneRadio>  
+                </h:selectOneRadio>
                 <label>Your Sport : </label>
-                <h:selectOneRadio value="#{control.player.sport}"> 
+                <h:selectOneRadio value="#{control.player.sport}" required="true" requiredMessage="Your Sport is required"> 
                     <f:selectItem itemValue = "Football" itemLabel = "Football" /> 
                     <f:selectItem itemValue = "Tennis" itemLabel = "Tennis" /> 
                     <f:selectItem itemValue = "Swimming" itemLabel = "Swimming" /> 

@@ -21,6 +21,10 @@
 
             <h:dataTable value="#{control.allPlayer}" var="p">
                 <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputText value="#{p.id}"/>
+                </h:column>
+                <h:column>
                     <f:facet name="header">Name</f:facet>
                     <h:outputText value="#{p.fname} "/> <h:outputText value="#{p.lname}"/>
                 </h:column>

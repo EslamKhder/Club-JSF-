@@ -50,7 +50,7 @@ public class ServicePlayer implements ServicesPlayer {
     @Override
     public int deletePlayer(Player player) {
         try {
-              player = this.getPlayer(player);
+            player = this.getPlayer(player);
             session = dataBasecontroller.getSession(sessionf);
             session.beginTransaction();
             session.delete(player);
@@ -60,29 +60,24 @@ public class ServicePlayer implements ServicesPlayer {
             JOptionPane.showMessageDialog(null, e.toString());
             return 0;
         }
-        
+
     }
 
     @Override
     public int updatePlayer(Player player) {
         session = dataBasecontroller.getSession(sessionf);
-        Player play = this.getPlayer(player);
-        
-
-        if (play == null) {
-            return 0;
-        } else {
-            play = player;
-            session.update(play);
-            return 1;
-        }
+        session.beginTransaction();
+        session.update(player);
+        session.getTransaction().commit();
+        return 1;
     }
 
     @Override
     public List<Player> getAllPlayer() {
         session = dataBasecontroller.getSession(sessionf);
         List<Player> players = new LinkedList<Player>();
-        Criteria cri = session.createCriteria(Player.class);
+        Criteria cri = session.createCriteria(Player.class
+        );
         players = cri.list();
         return players;
     }

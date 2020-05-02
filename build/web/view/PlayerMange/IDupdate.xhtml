@@ -1,16 +1,56 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>UP_Date Player</title>
+        <h:outputStylesheet library="css" name="Add.css" />
     </h:head>
     <h:body>
-        <form action="">
+        
+        <h:form>
             <label>Enter your id : </label> 
-            <input type="text" name = "id" value="" placeholder="Enter your ID" />
-            <input type="submit" value="DONE" /> 
-        </form>
+            <h:inputText value="#{control.player.id}" required="true" requiredMessage="Username is required" /><br/>
+            <h:commandButton id="submit-button" value="Submit" action="#{control.showPlayer()}"/>  
+        </h:form>
+        
+         <h:form>
+            <fieldset>
+                <legend>UP_Date</legend>
+                <label>ID : </label> 
+                <h:inputText value="#{control.player.id}" required="true" requiredMessage="ID is required" /><br/>
+                
+                <label>Frist Name : </label> 
+                <h:inputText value="#{control.player.fname}" required="true" requiredMessage="Name is required" /><br/>
+
+                <label>Last Name : </label>
+                <h:inputText value="#{control.player.lname}" required="true" requiredMessage="Name is required" /><br/>
+
+                <label>YOUR Age : </label>
+                <h:inputText value="#{control.player.age}" required="true" requiredMessage="Age is required" /><br/>
+
+                <label>YOUR Phone : </label>
+                <h:inputText value="#{control.player.phone}" required="true" requiredMessage="Phone is required" /><br/>
+
+                <label> Country : </label>
+                <h:inputText value="#{control.player.country}" required="true" requiredMessage="Country is required" /><br/>
+                <label>Gender : </label>
+                <h:selectOneRadio value="#{control.player.gender}" required="true" requiredMessage="Your Gender is required"> 
+                    <f:selectItem itemValue = "Male" itemLabel = "Male" class="red"/> 
+                    <f:selectItem itemValue = "FeMale" itemLabel = "FeMale" class="red"/>
+                </h:selectOneRadio>
+                <label>Your Sport : </label>
+                <h:selectOneRadio value="#{control.player.sport}" required="true" requiredMessage="Your Sport is required"> 
+                    <f:selectItem itemValue = "Football" itemLabel = "Football" /> 
+                    <f:selectItem itemValue = "Tennis" itemLabel = "Tennis" /> 
+                    <f:selectItem itemValue = "Swimming" itemLabel = "Swimming" /> 
+                    <f:selectItem itemValue = "Basketball" itemLabel = "Basketball" /> 
+                    <f:selectItem itemValue = "VolleyBall" itemLabel = "VolleyBall" />
+                 </h:selectOneRadio>
+                <h:commandButton id="submit-button" value="Submit" action="#{control.updatePlayer()}"/>  
+            </fieldset>
+        </h:form>
     </h:body>
 </html>
 

@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Enums.Gender;
+import Model.Enums.Sport;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +27,6 @@ import javax.persistence.Table;
 public class Player implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private int id;
     @Column(name = "First_Name", nullable = false)

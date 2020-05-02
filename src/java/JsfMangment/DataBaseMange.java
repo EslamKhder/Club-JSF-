@@ -2,18 +2,12 @@ package JsfMangment;
 
 import Control.PlayerController;
 import Model.Player;
-import Model.Playerdays;
-import Model.Playersports;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-/**
- *
- * @author Eng Eslam khder
- */
 @ManagedBean(name = "control")
 @RequestScoped
 public class DataBaseMange {
@@ -28,7 +22,7 @@ public class DataBaseMange {
     }
 
     public void showPlayer() {
-        pc.getPlayer(player);
+        player = pc.getPlayer(player);
     }
 
     public void deletePlayer() {
