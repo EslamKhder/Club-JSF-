@@ -42,8 +42,13 @@ public class ServicePlayer implements ServicesPlayer {
     @Override
     public Player getPlayer(Player player) {
         session = dataBasecontroller.getSession(sessionf);
-        Player play = (Player) session.get(Player.class, player.getId());
-        return play;
+        try {
+            Player play = (Player) session.get(Player.class, player.getId());
+            return play;
+        } catch (Exception e) {
+            return null;
+        }
+
     }
 
     @Override

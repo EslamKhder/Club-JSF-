@@ -11,23 +11,38 @@ import javax.faces.bean.RequestScoped;
 public class DataBaseMange {
 
     private Player player = new Player();
-    private PlayerController pc = new PlayerController();  
-    public void addPlayer() {
-        pc.addPlayer(player);
+    private PlayerController pc = new PlayerController();
+    private String error;
+    public String addPlayer() {
+        if(pc.addPlayer(player) == 1){
+            return "Manger.xhtml";
+        }
+        error = "ID Is Exist";
+        return null;
     }
-
+    
     public void showPlayer() {
         player = pc.getPlayer(player);
+        if(player == null){
+            error = "ID Doesn't Exist";
+        }
     }
 
-    public void deletePlayer() {
-        pc.deletePlayer(player);
+    public String deletePlayer() {
+        if(pc.deletePlayer(player) == 1){
+         return "Manger.xhtml";
+        }
+        error = "ID Doesn't Exist";
+        return null;
     }
 
-    public void updatePlayer() {
-        pc.updatePlayer(player);
+    public String updatePlayer() {
+        if(pc.updatePlayer(player) == 1){
+         return "Manger.xhtml";
+        }
+        error = "ID Doesn't Exist";
+        return null;
     }
-
     public List<Player> getAllPlayer() {
         return pc.getAllPlayer();
     }
@@ -47,4 +62,13 @@ public class DataBaseMange {
     public void setPc(PlayerController pc) {
         this.pc = pc;
     }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+    
 }

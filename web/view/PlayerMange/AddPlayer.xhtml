@@ -16,6 +16,8 @@
                     <f:validateLongRange minimum="1"/>
                     <f:convertNumber integerOnly="true"/>
                 </h:inputText>
+                <h:outputText value="#{control.error}" />
+                
                 <h:message for="player" /><br/>
                 <label>Frist Name : </label> 
                 <h:inputText id="fn" value="#{control.player.fname}" required="true" validatorMessage="Your name can have only Alphabets" requiredMessage="First Name is required">
@@ -61,7 +63,7 @@
                     <f:selectItem itemValue = "VolleyBall" itemLabel = "VolleyBall" />
                 </h:selectOneRadio>
                 <h:message for="sport"/><br/>
-                <h:commandButton id="submit-button" value="Submit" action="#{control.addPlayer()}"/>  
+                <h:commandButton id="submit-button" value="Submit" action="#{control.addPlayer()}" />
             </fieldset>
         </h:form>
     </h:body>

@@ -15,7 +15,8 @@
                     <f:validateLongRange minimum="1"/>
                     <f:convertNumber integerOnly="true"/>
                 </h:inputText>
-                <h:message for="player" /><br/>
+                <h:message for="player" />
+                <h:outputText value="#{control.error}" /><br/>
             <h:commandButton id="submit-button" value="Submit" action="#{control.deletePlayer()}"/>  
         </h:form>
     </h:body>
