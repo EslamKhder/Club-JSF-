@@ -2,9 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
         <title>Manager </title>
@@ -44,7 +42,6 @@
                     <f:facet name="header">Country</f:facet>
                     <h:outputText value="#{p.country}"/>
                 </h:column>
-                
                 <h:column>
                     <f:facet name="header">Sport</f:facet>
                     <h:outputText value="#{p.sport}"/>
@@ -68,8 +65,8 @@
                 -->
                 <h:column>
                     <f:facet name="header">OPTION</f:facet>
-                    <a href="http://localhost/me/one/frist-add.html" target="_blank">Delete</a>
-                    <a href="http://localhost/me/one/frist-add.html" target="_blank">Update</a>
+                    <a href="IDdelete.xhtml" target="_blank">Delete</a>
+                    <a href="IDupdate.xhtml" target="_blank">Update</a>
                 </h:column>
             </h:dataTable> 
         </div>

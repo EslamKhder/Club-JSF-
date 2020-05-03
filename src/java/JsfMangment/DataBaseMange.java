@@ -2,9 +2,7 @@ package JsfMangment;
 
 import Control.PlayerController;
 import Model.Player;
-import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -13,10 +11,7 @@ import javax.faces.bean.RequestScoped;
 public class DataBaseMange {
 
     private Player player = new Player();
-    private PlayerController pc = new PlayerController();
-//    private List<Playersports>  sports = new ArrayList();
-//    private List<Playerdays> days = new ArrayList();
-    
+    private PlayerController pc = new PlayerController();  
     public void addPlayer() {
         pc.addPlayer(player);
     }
@@ -52,21 +47,4 @@ public class DataBaseMange {
     public void setPc(PlayerController pc) {
         this.pc = pc;
     }
-
-//    public List<Playersports> getSports() {
-//        return sports;
-//    }
-//
-//    public void setSports(List<Playersports> sports) {
-//        this.sports = sports;
-//    }
-//
-//    public List<Playerdays> getDays() {
-//        return days;
-//    }
-//
-//    public void setDays(List<Playerdays> days) {
-//        this.days = days;
-//    }
-//    
 }

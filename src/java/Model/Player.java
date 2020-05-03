@@ -3,20 +3,12 @@ package Model;
 import Model.Enums.Gender;
 import Model.Enums.Sport;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.Table;
-
 /**
  *
  * @author Eng Eslam khder
@@ -45,17 +37,6 @@ public class Player implements Serializable {
     private Sport sport;
     @Column(name = "Country", nullable = false)
     private String country;
-    
-//    @ElementCollection
-//    @JoinTable(name = "PlayerSports",joinColumns = @JoinColumn(name = "Player1"))
-//    private List<Playersports>  sports = new ArrayList();
-//    @ElementCollection
-//    @JoinTable(name = "PlayerDays",joinColumns = @JoinColumn(name = "Player2"))
-//    private List<Playerdays> days = new ArrayList();
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "Players_Relationship",joinColumns = {@JoinColumn(name = "player_ID")},inverseJoinColumns = {@JoinColumn(name = "player_Item_ID")})
-//    private List<PlayerItems> playeritems = new ArrayList<PlayerItems>();
-
     public Player() {
         
     }

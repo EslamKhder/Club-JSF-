@@ -11,7 +11,12 @@
         
         <h:form>
             <label>Enter your id : </label> 
-            <h:inputText value="#{control.player.id}" required="true" requiredMessage="Username is required" /><br/>
+            <label>ID : </label> 
+                <h:inputText id="playerid" value="#{control.player.id}" required="true" converterMessage="Invalid ID (Must include only Number)" requiredMessage="ID is required" validatorMessage="Invalid ID">
+                    <f:validateLongRange minimum="1"/>
+                    <f:convertNumber integerOnly="true"/>
+                </h:inputText>
+                <h:message for="playerid" /><br/>
             <h:commandButton id="submit-button" value="Submit" action="#{control.showPlayer()}"/>  
         </h:form>
         
@@ -19,35 +24,55 @@
             <fieldset>
                 <legend>UP_Date</legend>
                 <label>ID : </label> 
-                <h:inputText value="#{control.player.id}" required="true" requiredMessage="ID is required" /><br/>
-                
+                <h:inputText id="player" value="#{control.player.id}" required="true" converterMessage="Invalid ID (Must include only Number)" requiredMessage="ID is required" validatorMessage="Invalid ID">
+                    <f:validateLongRange minimum="1"/>
+                    <f:convertNumber integerOnly="true"/>
+                </h:inputText>
+                <h:message for="player" /><br/>
                 <label>Frist Name : </label> 
-                <h:inputText value="#{control.player.fname}" required="true" requiredMessage="Name is required" /><br/>
+                <h:inputText id="fn" value="#{control.player.fname}" required="true" validatorMessage="Your name can have only Alphabets" requiredMessage="First Name is required">
+                    <f:validateRegex pattern="^([a-zA-Z]+(.)?[\s]*)$" />
+                </h:inputText>
+                <h:message for="fn"/><br/>
 
                 <label>Last Name : </label>
-                <h:inputText value="#{control.player.lname}" required="true" requiredMessage="Name is required" /><br/>
+                <h:inputText id="ln" value="#{control.player.lname}" required="true" validatorMessage="Your name can have only Alphabets" requiredMessage="Last Name is required">
+                    <f:validateRegex pattern="^([a-zA-Z]+(.)?[\s]*)$" />
+                </h:inputText>
+                <h:message for="ln"/><br/>
 
                 <label>YOUR Age : </label>
-                <h:inputText value="#{control.player.age}" required="true" requiredMessage="Age is required" /><br/>
+                <h:inputText id="Age" value="#{control.player.age}" validatorMessage="Age must be Between 14 and 50 " converterMessage="Invalid Age (Must include only Number)" required="true" requiredMessage="Age is required">
+                    <f:convertNumber integerOnly="true"/>
+                    <f:validateLongRange minimum="15" maximum="50"/>
+                </h:inputText>
+                <h:message for="Age"/><br/>
 
                 <label>YOUR Phone : </label>
-                <h:inputText value="#{control.player.phone}" required="true" requiredMessage="Phone is required" /><br/>
+                <h:inputText id="Phone" value="#{control.player.phone}" validatorMessage="Phone Must include 11 Number" required="true" requiredMessage="Phone is required" converterMessage="Invalid Phone (Must include only Number)">
+                    <f:convertNumber integerOnly="true"/>
+                    <f:validateLength maximum="11" minimum="11" />
+                </h:inputText>
+                <h:message for="Phone"/><br/>
 
                 <label> Country : </label>
-                <h:inputText value="#{control.player.country}" required="true" requiredMessage="Country is required" /><br/>
+                <h:inputText id="Country" value="#{control.player.country}" required="true" requiredMessage="Country is required" />
+                <h:message for="Country"/><br/>
                 <label>Gender : </label>
-                <h:selectOneRadio value="#{control.player.gender}" required="true" requiredMessage="Your Gender is required"> 
+                <h:selectOneRadio id="gender" value="#{control.player.gender}" required="true" requiredMessage="Your Gender is required"> 
                     <f:selectItem itemValue = "Male" itemLabel = "Male" class="red"/> 
                     <f:selectItem itemValue = "FeMale" itemLabel = "FeMale" class="red"/>
                 </h:selectOneRadio>
+                <h:message for="gender"/><br/>
                 <label>Your Sport : </label>
-                <h:selectOneRadio value="#{control.player.sport}" required="true" requiredMessage="Your Sport is required"> 
+                <h:selectOneRadio id="sport" value="#{control.player.sport}" required="true" requiredMessage="Your Sport is required"> 
                     <f:selectItem itemValue = "Football" itemLabel = "Football" /> 
                     <f:selectItem itemValue = "Tennis" itemLabel = "Tennis" /> 
                     <f:selectItem itemValue = "Swimming" itemLabel = "Swimming" /> 
                     <f:selectItem itemValue = "Basketball" itemLabel = "Basketball" /> 
                     <f:selectItem itemValue = "VolleyBall" itemLabel = "VolleyBall" />
-                 </h:selectOneRadio>
+                </h:selectOneRadio>
+                <h:message for="sport"/><br/>
                 <h:commandButton id="submit-button" value="Submit" action="#{control.updatePlayer()}"/>  
             </fieldset>
         </h:form>

@@ -35,7 +35,6 @@ public class ServicePlayer implements ServicesPlayer {
             session.getTransaction().commit();
             return 1;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());
             return 0;
         }
     }
@@ -57,7 +56,6 @@ public class ServicePlayer implements ServicesPlayer {
             session.getTransaction().commit();
             return 1;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());
             return 0;
         }
 
@@ -75,7 +73,7 @@ public class ServicePlayer implements ServicesPlayer {
     @Override
     public List<Player> getAllPlayer() {
         session = dataBasecontroller.getSession(sessionf);
-        List<Player> players = new LinkedList<Player>();
+        List<Player> players = new LinkedList<>();
         Criteria cri = session.createCriteria(Player.class
         );
         players = cri.list();
