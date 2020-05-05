@@ -11,7 +11,7 @@
         <h:form>
             <label>Enter your id : </label> 
             <label>ID : </label> 
-                <h:inputText id="player" value="#{control.player.id}" required="true" converterMessage="Invalid ID (Must include only Number)" requiredMessage="ID is required" validatorMessage="Invalid ID">
+            <h:inputText id="player" value="#{control.player.id}" required="true" disabled="true" converterMessage="Invalid ID (Must include only Number)" requiredMessage="ID is required" validatorMessage="Invalid ID">
                     <f:validateLongRange minimum="1"/>
                     <f:convertNumber integerOnly="true"/>
                 </h:inputText>

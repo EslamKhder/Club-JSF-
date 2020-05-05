@@ -1,11 +1,9 @@
 package DataBaseFiles.ServicesImplementation;
 
-import Control.DataBaseController;
 import DataBaseFiles.ServicesInterface.ServicesPlayer;
 import Model.Player;
 import java.util.LinkedList;
 import java.util.List;
-import javax.swing.JOptionPane;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,21 +13,27 @@ import org.hibernate.SessionFactory;
  * @author Eng Eslam khder
  */
 public class ServicePlayer implements ServicesPlayer {
-
-    private SessionFactory sessionf = null;
-    private DataBaseController dataBasecontroller;
+ private static ServicePlayer obj;
+    private SessionFactory sessionf;
+    private ServiceDatabase servicedatabase;
     private Session session;
 
-    public ServicePlayer() {
-        dataBasecontroller = new DataBaseController();
-        sessionf = dataBasecontroller.Connection();
+    private ServicePlayer() {
+        servicedatabase = new ServiceDatabase();
+        sessionf = servicedatabase.DataBaseConnection();
         session = null;
+    }
+    public static ServicePlayer getInstance() 
+    { 
+        if (obj==null) 
+            obj = new ServicePlayer(); 
+        return obj; 
     }
 
     @Override
     public int addPlayer(Player player) {
         try {
-            session = dataBasecontroller.getSession(sessionf);
+            session = servicedatabase.getSession(sessionf);
             session.beginTransaction();
             session.save(player);
             session.getTransaction().commit();
@@ -41,7 +45,7 @@ public class ServicePlayer implements ServicesPlayer {
 
     @Override
     public Player getPlayer(Player player) {
-        session = dataBasecontroller.getSession(sessionf);
+        session = servicedatabase.getSession(sessionf);
         try {
             Player play = (Player) session.get(Player.class, player.getId());
             return play;
@@ -55,7 +59,7 @@ public class ServicePlayer implements ServicesPlayer {
     public int deletePlayer(Player player) {
         try {
             player = this.getPlayer(player);
-            session = dataBasecontroller.getSession(sessionf);
+            session = servicedatabase.getSession(sessionf);
             session.beginTransaction();
             session.delete(player);
             session.getTransaction().commit();
@@ -68,7 +72,7 @@ public class ServicePlayer implements ServicesPlayer {
 
     @Override
     public int updatePlayer(Player player) {
-        session = dataBasecontroller.getSession(sessionf);
+        session = servicedatabase.getSession(sessionf);
         session.beginTransaction();
         session.update(player);
         session.getTransaction().commit();
@@ -77,7 +81,7 @@ public class ServicePlayer implements ServicesPlayer {
 
     @Override
     public List<Player> getAllPlayer() {
-        session = dataBasecontroller.getSession(sessionf);
+        session = servicedatabase.getSession(sessionf);
         List<Player> players = new LinkedList<>();
         Criteria cri = session.createCriteria(Player.class
         );
