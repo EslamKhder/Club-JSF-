@@ -11,8 +11,13 @@ import javax.faces.bean.RequestScoped;
 public class DataBaseMange {
 
     private Player player = new Player();
-    private PlayerController pc = new PlayerController();
+    private PlayerController pc;
     private String error;
+
+    public DataBaseMange() {
+        pc = new PlayerController();
+    }
+    
     public String addPlayer() {
         if(pc.addPlayer(player) == 1){
             return "Manger.xhtml";

@@ -29,6 +29,7 @@
                     <f:validateLongRange minimum="1"/>
                     <f:convertNumber integerOnly="true"/>
                 </h:inputText>
+                <h:inputHidden value="#{control.player.id}" />
                 <h:message for="player" /><br/>
                 <label>Frist Name : </label> 
                 <h:inputText id="fn" value="#{control.player.fname}" required="true" validatorMessage="Your name can have only Alphabets" requiredMessage="First Name is required">
@@ -51,7 +52,6 @@
 
                 <label>YOUR Phone : </label>
                 <h:inputText id="Phone" value="#{control.player.phone}" validatorMessage="Phone Must include 11 Number" required="true" requiredMessage="Phone is required" converterMessage="Invalid Phone (Must include only Number)">
-                    <f:convertNumber integerOnly="true"/>
                     <f:validateLength maximum="11" minimum="11" />
                 </h:inputText>
                 <h:message for="Phone"/><br/>

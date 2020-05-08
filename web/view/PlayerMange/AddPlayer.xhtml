@@ -40,7 +40,6 @@
 
                 <label>YOUR Phone : </label>
                 <h:inputText id="Phone" value="#{control.player.phone}" validatorMessage="Phone Must include 11 Number" required="true" requiredMessage="Phone is required" converterMessage="Invalid Phone (Must include only Number)">
-                    <f:convertNumber integerOnly="true"/>
                     <f:validateLength maximum="11" minimum="11" />
                 </h:inputText>
                 <h:message for="Phone"/><br/>
